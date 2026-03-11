@@ -19,7 +19,7 @@ const skillCategories = [
 const experiences = [
     {
         title: 'Bishyaka',
-        date: 'Nov 2023 – present · 1 yr 2 mos',
+        date: 'Nov 2023 – present',
         subtitle: 'Flutter Developer · On‑site, Egypt',
         details: [
             'Building e‑commerce solutions for Bishyaka (consumer & vendor) – iOS, Android, web.',
@@ -30,7 +30,7 @@ const experiences = [
     },
     {
         title: 'Freelance',
-        date: 'Nov 2021 – present · 3 yrs 2 mos',
+        date: 'Nov 2021 – present',
         subtitle: 'Flutter Developer · Remote',
         details: [
             'Delivered end‑to‑end apps using MVC, Clean Architecture, GetX, Provider, BLoC.',
@@ -46,13 +46,13 @@ const projects = [
     { name: 'Bishyaka Fashion', desc: 'E‑commerce fashion for iOS/Android/web. BLoC, Firebase, SQLite, OAuth2.', tech: ['BLoC', 'Dio', 'OAuth2', 'Codemagic'], links: { appStore: 'https://apps.apple.com/eg/app/bishyaka-fashion/id6738314712', playStore: 'https://play.google.com/store/apps/details?id=com.bishyaka.consumer.work&hl=ar' } },
     { name: 'Bishyaka Vendors', desc: 'Store management for sellers – product upload, order tracking. (Under development)', tech: ['BLoC', 'Firebase', 'SQLite', 'Clean Arch'], links: {} },
     { name: 'Happy Shop', desc: 'Shopping with maps, notifications, GetX, Stripe/PayPal.', tech: ['GetX', 'Geolocator', 'Lottie', 'Payments'], links: { github: 'https://github.com/ahmed-eid-faried/happyshop', youtube: 'https://www.youtube.com/watch?v=RuvCCDwtgtQ' } },
+    { name: 'Delivery', desc: 'Live order tracking, polyline, GetX, Firebase notifications.', tech: ['GetX', 'Maps', 'Polyline', 'Geolocator'], links: { github: 'https://github.com/ahmed-eid-faried/delivery', youtube: 'https://www.youtube.com/watch?v=tg2oO5aPWwI' } },
+    { name: 'Foodease', desc: 'Food delivery (WIP): BLoC, clean architecture, FCM, local notifs.', tech: ['BLoC', 'Clean Arch', 'Dio', 'FCM'], links: { github: 'https://github.com/ahmed-eid-faried/foodease' } },
+    { name: 'Doctors', desc: 'Telemedicine, WebRTC, BLoC, maps, localization.', tech: ['BLoC', 'WebRTC', 'Firebase', 'Maps'], links: { github: 'https://github.com/ahmed-eid-faried/doctor' } },
     { name: 'Shafi\'i Poems', desc: 'Religious poems, Provider, screen utils, native splash.', tech: ['Provider', 'ScreenUtil', 'Assets'], links: { github: 'https://github.com/ahmed-eid-faried/shafii', youtube: 'https://www.youtube.com/watch?v=dQrDuOSBGrA' } },
     { name: 'Islamic Songs', desc: 'Audio streaming, GetX, just_audio, Firebase Crashlytics.', tech: ['GetX', 'Just Audio', 'StreamBuilder'], links: { youtube: 'https://www.youtube.com/watch?v=rgzgK5Q07lY' } },
     { name: 'Portfolio App', desc: 'Flutter portfolio with animations, GetX, Lottie, URL launcher.', tech: ['GetX', 'Animate_do', 'Lottie'], links: { github: 'https://github.com/ahmed-eid-faried/my_portfolio', site: 'https://ahmed-eid-faried.github.io' } },
     { name: 'My Tasks', desc: 'Task manager with Provider, calendar, animations.', tech: ['Provider', 'Syncfusion', 'GetStorage'], links: { github: 'https://github.com/ahmed-eid-faried/mytasks', youtube: 'https://www.youtube.com/watch?v=qkkB0egPwqU' } },
-    { name: 'Delivery', desc: 'Live order tracking, polyline, GetX, Firebase notifications.', tech: ['GetX', 'Maps', 'Polyline', 'Geolocator'], links: { github: 'https://github.com/ahmed-eid-faried/delivery', youtube: 'https://www.youtube.com/watch?v=tg2oO5aPWwI' } },
-    { name: 'Foodease', desc: 'Food delivery (WIP): BLoC, clean architecture, FCM, local notifs.', tech: ['BLoC', 'Clean Arch', 'Dio', 'FCM'], links: { github: 'https://github.com/ahmed-eid-faried/foodease' } },
-    { name: 'Doctors', desc: 'Telemedicine, WebRTC, BLoC, maps, localization.', tech: ['BLoC', 'WebRTC', 'Firebase', 'Maps'], links: { github: 'https://github.com/ahmed-eid-faried/doctor' } },
     { name: 'Weather', desc: 'Weather forecasts with GetX, geolocation, shared_prefs.', tech: ['GetX', 'Geocoding', 'HTTP'], links: { github: 'https://github.com/ahmed-eid-faried/weather', youtube: 'https://www.youtube.com/watch?v=4jHMKkqxFQw' } },
     { name: 'News App', desc: 'News with GetX, webviews, Lottie, location services.', tech: ['GetX', 'Webview', 'Lottie', 'Geolocator'], links: { github: 'https://github.com/ahmed-eid-faried/news-app', youtube: 'https://www.youtube.com/watch?v=Nj2HyHwXijg' } }
 ];
