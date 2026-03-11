@@ -190,6 +190,58 @@ function initSmoothAnchor() {
     });
 }
 
+// ========== CONTACT FORM SUBMISSION (Client-side only) ==========
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const service = document.getElementById('service').value;
+        const details = document.getElementById('details').value;
+        const attachments = document.getElementById('attachments').files;
+
+        console.log('Form Submitted!', { name, service, details, attachments });
+
+        alert(
+            'Thank you for your message!\n\n'
+            + 'Please note: Sending emails directly from a website with attachments requires a backend server.\n'
+            + 'This form data has been logged to the console for demonstration purposes.\n\n'
+            + 'To enable full email functionality, a server-side script (e.g., Node.js, PHP, Python) would be needed to process the form and send the email with attachments.'
+        );
+
+        // Here you would typically send the data to a backend server
+        // Example (conceptual, requires backend):
+        /*
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('service', service);
+        formData.append('details', details);
+        for (let i = 0; i < attachments.length; i++) {
+            formData.append('attachments', attachments[i]);
+        }
+
+        try {
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('Failed to send message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('An error occurred. Please try again later.');
+        }
+        */
+    });
+}
+
 // ========== INIT ==========
 window.addEventListener('DOMContentLoaded', () => {
     renderSkills();
@@ -202,4 +254,5 @@ window.addEventListener('DOMContentLoaded', () => {
     initNavScroll();
     initReveal();
     initSmoothAnchor();
+    initContactForm();
 });
