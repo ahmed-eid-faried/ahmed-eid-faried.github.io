@@ -245,13 +245,26 @@ const summaryText = `Experienced Flutter Developer skilled in Dart, OOP, and Sol
 function renderSkills() {
     const container = document.getElementById("skillsGrid");
     if (!container) return;
+
+    // مسح المحتوى القديم أولاً لتجنب التكرار
+    container.innerHTML = "";
+
     skillCategories.forEach((cat) => {
         const div = document.createElement("div");
-        div.className = "skill-cat";
-        div.innerHTML = `<h3>${cat.name
-            }</h3><div class="skill-pills">${cat.skills
+        // تأكد أن الكلاس هنا هو skill-card ليتناسب مع الـ CSS الجديد
+        div.className = "skill-card";
+
+        div.innerHTML = `
+      <div class="skill-header">
+        <h3>${cat.name}</h3>
+        <span class="skill-count">${cat.skills.length} Skills</span>
+      </div>
+      <div class="skill-pills">
+        ${cat.skills
                 .map((s) => `<span class="skill-pill">${s}</span>`)
-                .join("")}</div>`;
+                .join("")}
+      </div>
+    `;
         container.appendChild(div);
     });
 }
@@ -468,4 +481,10 @@ window.addEventListener("DOMContentLoaded", () => {
     initReveal();
     initSmoothAnchor();
     initContactForm();
+});
+document.addEventListener("click", (e) => {
+    const card = e.target.closest(".skill-card");
+    if (card) {
+        card.classList.toggle("active");
+    }
 });
