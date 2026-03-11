@@ -191,57 +191,44 @@ function initSmoothAnchor() {
     });
 }
 
-// ========== CONTACT FORM SUBMISSION (Using Formspree) ==========
+// ========== CONTACT FORM SUBMISSION (Using mailto:) ==========
 function initContactForm() {
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
 
     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const formData = new FormData(form);
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const details = document.getElementById('details').value;
 
-        // Show loading state
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
-        status.textContent = 'Processing your message...';
-        status.style.color = '#3b82f6';
+        const subject = encodeURIComponent(`Project Inquiry: ${service} from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Phone: ${phone}\n` +
+            `Service/App Type: ${service}\n\n` +
+            `Project Details:\n${details}`
+        );
 
-        try {
-            // Using Formspree - You can replace the email here if needed
-            // To use Formspree without a hash, you just send to this URL
-            // and you will receive a verification email to activate it.
-            const response = await fetch('https://formspree.io/f/ahmed_mady22@icloud.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+        const mailtoLink = `mailto:ahmed_mady22@icloud.com?subject=${subject}&body=${body}`;
 
-            if (response.ok) {
-                status.textContent = '✅ Message sent successfully! I will get back to you soon.';
-                status.style.color = '#10b981';
-                form.reset();
-            } else {
-                const data = await response.json();
-                if (data.errors) {
-                    status.textContent = '❌ Error: ' + data.errors.map(error => error.message).join(', ');
-                } else {
-                    status.textContent = '❌ Failed to send message. Please try again.';
-                }
-                status.style.color = '#ef4444';
-            }
-        } catch (error) {
-            status.textContent = '❌ An error occurred. Please check your connection.';
-            status.style.color = '#ef4444';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerText = 'Send Message';
-        }
+        // Show feedback
+        status.textContent = '✅ Opening your email client...';
+        status.style.color = '#10b981';
+
+        // Open mailto link
+        window.location.href = mailtoLink;
+
+        // Reset form after a delay
+        setTimeout(() => {
+            form.reset();
+        }, 1000);
     });
 }
 
