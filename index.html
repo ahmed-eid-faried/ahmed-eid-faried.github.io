@@ -31,17 +31,14 @@
     <section id="bio" class="section">
         <div class="hero-grid">
             <div class="name-title">
-                <h1>Ahmed Mady</h1>
-                <div class="badge">Flutter · Dart · clean architecture</div>
-                <div class="contact-bar">
-                    <span>📧 <a href="mailto:ahmed_mady22@icloud.com">ahmed_mady22@icloud.com</a></span>
-                    <span>📞 <a href="tel:+201555663045">+20 15 55 66 30 45</a></span>
-                    <span>🔗 <a href="https://www.linkedin.com/in/ahmed-mady-a16715228/">LinkedIn</a></span>
-                    <span>🐙 <a href="https://github.com/ahmed-eid-faried">GitHub</a></span>
-                    <span>🌐 <a href="https://ahmed-eid-faried.github.io">Portfolio</a></span>
+                <h1 id="heroName">Ahmed Mady</h1>
+                <div id="heroJob" class="job-title">Flutter engineer</div>
+                <div class="badge" id="heroBadge">Flutter · Dart · clean architecture</div>
+                <div class="contact-bar" id="heroContacts">
+                    <!-- dynamically filled by script.js -->
                 </div>
                 <!-- decorative snippet -->
-                <div class="code-snippet">
+                <div class="code-snippet" id="heroSnippet">
                     <span class="keyword">class</span> <span style="color:#2563eb;">FlutterExpert</span> {<br>
                     &nbsp;&nbsp;<span class="keyword">final</span> name = <span class="string">'Ahmed Mady'</span>;<br>
                     &nbsp;&nbsp;<span class="keyword">final</span> experience = <span class="string">'3+ years ·
@@ -49,14 +46,14 @@
                     }
                 </div>
                 <!-- Objective -->
-                <div class="objective">
+                <div class="objective" id="heroObjective">
                     <p style="font-size: 1.1rem;"><strong>🎯 Objective</strong><br>Passionate Flutter developer with
                         expertise in Dart and Flutter, dedicated to creating high-quality, user-centric mobile apps.
                         Committed to delivering innovative solutions that enhance user experiences and drive business
                         success.</p>
                 </div>
                 <!-- Education -->
-                <div
+                <div id="heroEducation"
                     style="margin-top: 24px; background: #ffffff; border-radius: 30px; padding: 22px; border:1px solid #e3eefc;">
                     <p><strong>🎓 Zagazig University</strong> (2015–2019) — B.Sc. Science, GPA 3.5 (Very Good
                         with Honor)</p>
@@ -65,13 +62,13 @@
             <!-- right column: skills preview -->
             <div style="background: #ffffff; border-radius: 40px; padding: 32px; border: 1px solid #e9f0fa;">
                 <h3 style="font-weight: 600; margin-bottom: 20px;">⚡ core competencies</h3>
-                <div class="skill-pills">
-                    <span class="skill-pill">Flutter</span><span class="skill-pill">Dart</span><span
-                        class="skill-pill">BLoC</span><span class="skill-pill">GetX</span>
-                    <span class="skill-pill">Firebase</span><span class="skill-pill">RESTful APIs</span><span
-                        class="skill-pill">Clean Architecture</span>
-                    <span class="skill-pill">SOLID</span><span class="skill-pill">CI/CD</span><span
-                        class="skill-pill">OOP</span><span class="skill-pill">MVC</span>
+                <div class="core-skill-pills">
+                    <span class="core-skill-pill">Flutter</span><span class="core-skill-pill">Dart</span><span
+                        class="core-skill-pill">BLoC</span><span class="core-skill-pill">GetX</span>
+                    <span class="core-skill-pill">Firebase</span><span class="core-skill-pill">RESTful APIs</span><span
+                        class="core-skill-pill">Clean Architecture</span>
+                    <span class="core-skill-pill">SOLID</span><span class="core-skill-pill">CI/CD</span><span
+                        class="core-skill-pill">OOP</span><span class="core-skill-pill">MVC</span>
                 </div>
                 <p style="margin-top: 24px; color: #3f5a7a;">➕ 40+ technologies – see full list below</p>
             </div>
@@ -106,34 +103,8 @@
     <!-- CONTACT + SUMMARY -->
     <section id="contact" class="section">
         <div class="contact-block">
-            <div class="contact-left">
-                <h2>Let's connect</h2>
-                <p style="color:#3e5982;">Open for freelance or full‑time opportunities.</p>
-
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <a href="mailto:ahmed_mady22@icloud.com">ahmed_mady22@icloud.com</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <a href="tel:+201555663045">+20 15 55 66 30 45</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">💼</span>
-                    <a href="https://linkedin.com" target="_blank">linkedin.com/in/ahmed-mady-flutter</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">🐙</span>
-                    <a href="https://github.com" target="_blank">github.com/ahmed-eid-faried</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">🌐</span>
-                    <a href="https://ahmed-eid-faried.github.io" target="_blank">ahmed-eid-faried.github.io</a>
-                </div>
+            <div class="contact-left" id="contactLeft">
+                <!-- contact info will be rendered by script.js -->
             </div>
 
             <div class="lottie-small" id="contactLottie"></div>

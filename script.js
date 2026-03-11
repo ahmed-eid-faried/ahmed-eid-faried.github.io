@@ -1,257 +1,36 @@
 // ========== DATA ==========
-// Skills categories (from CV)
-const skillCategories = [
-    {
-        name: "Dart & core",
-        skills: ["Dart", "OOP", "SOLID", "Problem Solving", "Data Structures"]
-    },
-    {
-        name: "Flutter & UI",
-        skills: [
-            "Animations",
-            "Notifications",
-            "Deployment",
-            "Lottie",
-            "Responsive Design",
-            "Material/Cupertino",
-            "Splash Screen"
-        ]
-    },
-    {
-        name: "State management",
-        skills: [
-            "GetX",
-            "Provider",
-            "BLoC",
-            "MVC",
-            "Clean Code",
-            "Clean Architecture"
-        ]
-    },
-    {
-        name: "Firebase",
-        skills: [
-            "Authentication",
-            "Cloud Firestore",
-            "Realtime DB",
-            "Cloud Messaging",
-            "Analytics",
-            "Crashlytics",
-            "App Distribution"
-        ]
-    },
-    {
-        name: "API & backend",
-        skills: [
-            "RESTful APIs",
-            "JSON",
-            "Postman",
-            "Thunder Client",
-            "MySQL",
-            "PHP (API)",
-            "JWT",
-            "OAuth2"
-        ]
-    },
-    {
-        name: "Local storage",
-        skills: ["SQLite", "Shared Preferences", "Hive", "GetStorage"]
-    },
-    {
-        name: "Testing & tools",
-        skills: [
-            "Unit Testing",
-            "Widget Testing",
-            "Integration Testing",
-            "Firebase Crashlytics",
-            "Flutter DevTools"
-        ]
-    },
-    {
-        name: "CI/CD & versioning",
-        skills: [
-            "Git",
-            "GitHub",
-            "Codemagic",
-            "Flutter CLI",
-            "Flutterfire CLI",
-            "Agile/Jira"
-        ]
-    },
-    {
-        name: "Location & maps",
-        skills: ["Geolocator", "Geocoding", "Google Maps", "Polyline"]
-    },
-    {
-        name: "Additional",
-        skills: [
-            "i18n",
-            "Localization",
-            "Middleware",
-            "Webviews",
-            "URL Launcher",
-            "CachedNetworkImage",
-            "ImagePicker",
-            "Fluttertoast"
-        ]
-    },
-    {
-        name: "Design & IDE",
-        skills: ["UI/UX", "Adobe XD", "Figma", "VSCode", "Android Studio", "Xcode"]
-    },
-    {
-        name: "Store & deployment",
-        skills: [
-            "App Store Connect",
-            "Google Play Console",
-            "Firebase App Distribution"
-        ]
-    }
-];
+let skillCategories = [];
+let experiences = [];
+let projects = [];
+let summaryText = '';
+let contactInfo = {};
+let heroData = {};
 
-// Experience
-const experiences = [
-    {
-        title: "Bishyaka",
-        date: "Nov 2023 – present",
-        subtitle: "Flutter Developer · On‑site, Egypt",
-        details: [
-            "Building e‑commerce solutions for Bishyaka (consumer & vendor) – iOS, Android, web.",
-            "Implement BLoC, SOLID, clean architecture for high performance & maintainability.",
-            "Integrate real‑time notifications, OAuth2, third‑party APIs, and animations.",
-            "Optimize responsive layouts and collaborate closely with the team."
-        ]
-    },
-    {
-        title: "Freelance",
-        date: "Nov 2021 – present",
-        subtitle: "Flutter Developer · Remote",
-        details: [
-            "Delivered end‑to‑end apps using MVC, Clean Architecture, GetX, Provider, BLoC.",
-            "Integrated REST APIs, Firebase, MySQL, PHP, maps, payments (Stripe/PayPal).",
-            "Applied SOLID principles, clean code, and version control with Git/GitHub.",
-            "Collaborated with clients to understand needs, deployed to stores."
-        ]
+async function loadData() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Unable to fetch data.json');
+        const data = await response.json();
+        skillCategories = data.skillCategories || [];
+        experiences = data.experiences || [];
+        projects = data.projects || [];
+        summaryText = data.summaryText || '';
+        contactInfo = data.contact || {};
+        heroData = data.hero || {};
+    } catch (err) {
+        console.error('Error loading data.json', err);
     }
-];
-
-// Projects data (12 projects)
-const projects = [
-    {
-        name: "Bishyaka Fashion",
-        desc:
-            "E‑commerce fashion for iOS/Android/web. BLoC, Firebase, SQLite, OAuth2.",
-        tech: ["BLoC", "Dio", "OAuth2", "Codemagic"],
-        links: {
-            appStore: "https://apps.apple.com/eg/app/bishyaka-fashion/id6738314712",
-            playStore:
-                "https://play.google.com/store/apps/details?id=com.bishyaka.consumer.work&hl=ar"
-        }
-    },
-    {
-        name: "Bishyaka Vendors",
-        desc:
-            "Store management for sellers – product upload, order tracking. (Under development)",
-        tech: ["BLoC", "Firebase", "SQLite", "Clean Arch"],
-        links: {}
-    },
-    {
-        name: "Happy Shop",
-        desc: "Shopping with maps, notifications, GetX, Stripe/PayPal.",
-        tech: ["GetX", "Geolocator", "Lottie", "Payments"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/happyshop",
-            youtube: "https://www.youtube.com/watch?v=RuvCCDwtgtQ"
-        }
-    },
-    {
-        name: "Delivery",
-        desc: "Live order tracking, polyline, GetX, Firebase notifications.",
-        tech: ["GetX", "Maps", "Polyline", "Geolocator"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/delivery",
-            youtube: "https://www.youtube.com/watch?v=tg2oO5aPWwI"
-        }
-    },
-    {
-        name: "Foodease",
-        desc: "Food delivery (WIP): BLoC, clean architecture, FCM, local notifs.",
-        tech: ["BLoC", "Clean Arch", "Dio", "FCM"],
-        links: { github: "https://github.com/ahmed-eid-faried/foodease" }
-    },
-    {
-        name: "Doctors",
-        desc: "Telemedicine, WebRTC, BLoC, maps, localization.",
-        tech: ["BLoC", "WebRTC", "Firebase", "Maps"],
-        links: { github: "https://github.com/ahmed-eid-faried/doctor" }
-    },
-    {
-        name: "Shafi'i Poems",
-        desc: "Religious poems, Provider, screen utils, native splash.",
-        tech: ["Provider", "ScreenUtil", "Assets"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/shafii",
-            youtube: "https://www.youtube.com/watch?v=dQrDuOSBGrA"
-        }
-    },
-    {
-        name: "Islamic Songs",
-        desc: "Audio streaming, GetX, just_audio, Firebase Crashlytics.",
-        tech: ["GetX", "Just Audio", "StreamBuilder"],
-        links: { youtube: "https://www.youtube.com/watch?v=rgzgK5Q07lY" }
-    },
-    {
-        name: "Portfolio App",
-        desc: "Flutter portfolio with animations, GetX, Lottie, URL launcher.",
-        tech: ["GetX", "Animate_do", "Lottie"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/my_portfolio",
-            site: "https://ahmed-eid-faried.github.io"
-        }
-    },
-    {
-        name: "My Tasks",
-        desc: "Task manager with Provider, calendar, animations.",
-        tech: ["Provider", "Syncfusion", "GetStorage"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/mytasks",
-            youtube: "https://www.youtube.com/watch?v=qkkB0egPwqU"
-        }
-    },
-    {
-        name: "Weather",
-        desc: "Weather forecasts with GetX, geolocation, shared_prefs.",
-        tech: ["GetX", "Geocoding", "HTTP"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/weather",
-            youtube: "https://www.youtube.com/watch?v=4jHMKkqxFQw"
-        }
-    },
-    {
-        name: "News App",
-        desc: "News with GetX, webviews, Lottie, location services.",
-        tech: ["GetX", "Webview", "Lottie", "Geolocator"],
-        links: {
-            github: "https://github.com/ahmed-eid-faried/news-app",
-            youtube: "https://www.youtube.com/watch?v=Nj2HyHwXijg"
-        }
-    }
-];
-
-// Summary text (from CV)
-const summaryText = `Experienced Flutter Developer skilled in Dart, OOP, and Solid Principles, proficient in problem-solving and data structures. Demonstrated expertise in Flutter, including animations, notifications, and deployment, coupled with strong proficiency in handling RESTful APIs, JSON, Postman, and Thunder Client, along with MySQL and PHP for API integration. Well-versed in state management techniques, including Getx, Provider, and Bloc pattern, with a solid grasp of design patterns, such as MVC, and a commitment to clean code and clean architecture. Proficient in Firebase services, debugging, various testing methodologies, Git, GitHub, UI/UX tools like Adobe XD and Figma, and adept in communication in English. Experienced in CI/CD, Agile development methodologies, and working with Jira for efficient project management.`;
+}
 
 // ========== RENDER FUNCTIONS ==========
 function renderSkills() {
     const container = document.getElementById("skillsGrid");
     if (!container) return;
 
-    // مسح المحتوى القديم أولاً لتجنب التكرار
     container.innerHTML = "";
 
     skillCategories.forEach((cat) => {
         const div = document.createElement("div");
-        // تأكد أن الكلاس هنا هو skill-card ليتناسب مع الـ CSS الجديد
         div.className = "skill-card";
 
         div.innerHTML = `
@@ -340,6 +119,64 @@ function renderSummary() {
     const sumDiv = document.getElementById("summaryCard");
     if (sumDiv)
         sumDiv.innerHTML = `<h3 style="font-size:1.8rem; font-weight:600; margin-bottom:16px;">📋 summary</h3><p style="color:#1f3a5f; font-size:1rem;">${summaryText}</p>`;
+}
+
+function renderHero() {
+    if (!heroData) return;
+    // document title
+    if (heroData.name && heroData.job) {
+        document.title = `${heroData.name} · ${heroData.job}`;
+    }
+    const nameEl = document.getElementById("heroName");
+    if (nameEl) nameEl.textContent = heroData.name || "";
+    const jobEl = document.getElementById("heroJob");
+    if (jobEl) jobEl.textContent = heroData.job || "";
+    const badgeEl = document.getElementById("heroBadge");
+    if (badgeEl) badgeEl.textContent = heroData.badge || "";
+    const objEl = document.getElementById("heroObjective");
+    if (objEl) objEl.innerHTML = `<p style=\"font-size: 1.1rem;\"><strong>🎯 Objective</strong><br>${heroData.objective || ""}</p>`;
+    const eduEl = document.getElementById("heroEducation");
+    if (eduEl && heroData.education) {
+        eduEl.innerHTML = `<p><strong>🎓 ${heroData.education.university}</strong> (${heroData.education.years}) — ${heroData.education.degree}</p>`;
+    }
+    const snippetEl = document.getElementById("heroSnippet");
+    if (snippetEl) {
+        snippetEl.innerHTML = `
+            <span class=\"keyword\">class</span> <span style=\"color:#2563eb;\">${heroData.snippetName || ""}</span> {<br>
+            &nbsp;&nbsp;<span class=\"keyword\">final</span> name = <span class=\"string\">'${heroData.name}'</span>;<br>
+            &nbsp;&nbsp;<span class=\"keyword\">final</span> experience = <span class=\"string\">'${heroData.snippetExperience}'</span>;<br>
+            }
+        `;
+    }
+}
+
+function renderContacts() {
+    if (!contactInfo) return;
+    // hero bar
+    const heroBar = document.getElementById("heroContacts");
+    if (heroBar) {
+        heroBar.innerHTML = `
+            <span>📧 <a href="mailto:${contactInfo.email}">${contactInfo.email}</a></span>
+            <span>📞 <a href="tel:${contactInfo.phone}">${contactInfo.phone}</a></span>
+            <span>🔗 <a href="${contactInfo.linkedin}" target="_blank">LinkedIn</a></span>
+            <span>🐙 <a href="${contactInfo.github}" target="_blank">GitHub</a></span>
+            <span>🌐 <a href="${contactInfo.portfolio}" target="_blank">Portfolio</a></span>
+        `;
+    }
+    // contact section left column
+    const contactLeft = document.getElementById("contactLeft");
+    if (contactLeft) {
+        // show name too if desired
+        contactLeft.innerHTML = `
+            <h2>Let's connect</h2>
+            <p style="color:#3e5982;">Open for freelance or full‑time opportunities.</p>
+            <div class="contact-item"><span class="contact-icon">📧</span><a href="mailto:${contactInfo.email}">${contactInfo.email}</a></div>
+            <div class="contact-item"><span class="contact-icon">📱</span><a href="tel:${contactInfo.phone}">${contactInfo.phone}</a></div>
+            <div class="contact-item"><span class="contact-icon">💼</span><a href="${contactInfo.linkedin}" target="_blank">${contactInfo.linkedin.replace('https://', '')}</a></div>
+            <div class="contact-item"><span class="contact-icon">🐙</span><a href="${contactInfo.github}" target="_blank">${contactInfo.github.replace('https://', '')}</a></div>
+            <div class="contact-item"><span class="contact-icon">🌐</span><a href="${contactInfo.portfolio}" target="_blank">${contactInfo.portfolio.replace('https://', '')}</a></div>
+        `;
+    }
 }
 
 // ========== LOTTIE HELPER ==========
@@ -452,7 +289,7 @@ function initContactForm() {
             `Project Details:\n${details}`
         );
 
-        const mailtoLink = `mailto:ahmed_mady22@icloud.com?subject=${subject}&body=${body}`;
+        const mailtoLink = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
 
         // Show feedback
         status.textContent = "✅ Opening your email client...";
@@ -469,7 +306,10 @@ function initContactForm() {
 }
 
 // ========== INIT ==========
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
+    await loadData();
+    renderHero();
+    renderContacts();
     renderSkills();
     renderExperience();
     renderProjects();

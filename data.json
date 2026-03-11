@@ -1,0 +1,338 @@
+{
+    "skillCategories": [
+        {
+            "name": "Dart & core",
+            "skills": [
+                "Dart",
+                "OOP",
+                "SOLID",
+                "Problem Solving",
+                "Data Structures"
+            ]
+        },
+        {
+            "name": "Flutter & UI",
+            "skills": [
+                "Animations",
+                "Notifications",
+                "Deployment",
+                "Lottie",
+                "Responsive Design",
+                "Material/Cupertino",
+                "Splash Screen"
+            ]
+        },
+        {
+            "name": "State management",
+            "skills": [
+                "GetX",
+                "Provider",
+                "BLoC",
+                "MVC",
+                "Clean Code",
+                "Clean Architecture"
+            ]
+        },
+        {
+            "name": "Firebase",
+            "skills": [
+                "Authentication",
+                "Cloud Firestore",
+                "Realtime DB",
+                "Cloud Messaging",
+                "Analytics",
+                "Crashlytics",
+                "App Distribution"
+            ]
+        },
+        {
+            "name": "API & backend",
+            "skills": [
+                "RESTful APIs",
+                "JSON",
+                "Postman",
+                "Thunder Client",
+                "MySQL",
+                "PHP (API)",
+                "JWT",
+                "OAuth2"
+            ]
+        },
+        {
+            "name": "Local storage",
+            "skills": [
+                "SQLite",
+                "Shared Preferences",
+                "Hive",
+                "GetStorage"
+            ]
+        },
+        {
+            "name": "Testing & tools",
+            "skills": [
+                "Unit Testing",
+                "Widget Testing",
+                "Integration Testing",
+                "Firebase Crashlytics",
+                "Flutter DevTools"
+            ]
+        },
+        {
+            "name": "CI/CD & versioning",
+            "skills": [
+                "Git",
+                "GitHub",
+                "Codemagic",
+                "Flutter CLI",
+                "Flutterfire CLI",
+                "Agile/Jira"
+            ]
+        },
+        {
+            "name": "Location & maps",
+            "skills": [
+                "Geolocator",
+                "Geocoding",
+                "Google Maps",
+                "Polyline"
+            ]
+        },
+        {
+            "name": "Additional",
+            "skills": [
+                "i18n",
+                "Localization",
+                "Middleware",
+                "Webviews",
+                "URL Launcher",
+                "CachedNetworkImage",
+                "ImagePicker",
+                "Fluttertoast"
+            ]
+        },
+        {
+            "name": "Design & IDE",
+            "skills": [
+                "UI/UX",
+                "Adobe XD",
+                "Figma",
+                "VSCode",
+                "Android Studio",
+                "Xcode"
+            ]
+        },
+        {
+            "name": "Store & deployment",
+            "skills": [
+                "App Store Connect",
+                "Google Play Console",
+                "Firebase App Distribution"
+            ]
+        }
+    ],
+    "experiences": [
+        {
+            "title": "Bishyaka",
+            "date": "Nov 2023 – present",
+            "subtitle": "Flutter Developer · On‑site, Egypt",
+            "details": [
+                "Building e‑commerce solutions for Bishyaka (consumer & vendor) – iOS, Android, web.",
+                "Implement BLoC, SOLID, clean architecture for high performance & maintainability.",
+                "Integrate real‑time notifications, OAuth2, third‑party APIs, and animations.",
+                "Optimize responsive layouts and collaborate closely with the team."
+            ]
+        },
+        {
+            "title": "Freelance",
+            "date": "Nov 2021 – present",
+            "subtitle": "Flutter Developer · Remote",
+            "details": [
+                "Delivered end‑to‑end apps using MVC, Clean Architecture, GetX, Provider, BLoC.",
+                "Integrated REST APIs, Firebase, MySQL, PHP, maps, payments (Stripe/PayPal).",
+                "Applied SOLID principles, clean code, and version control with Git/GitHub.",
+                "Collaborated with clients to understand needs, deployed to stores."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Bishyaka Fashion",
+            "desc": "E‑commerce fashion for iOS/Android/web. BLoC, Firebase, SQLite, OAuth2.",
+            "tech": [
+                "BLoC",
+                "Dio",
+                "OAuth2",
+                "Codemagic"
+            ],
+            "links": {
+                "appStore": "https://apps.apple.com/eg/app/bishyaka-fashion/id6738314712",
+                "playStore": "https://play.google.com/store/apps/details?id=com.bishyaka.consumer.work&hl=ar"
+            }
+        },
+        {
+            "name": "Bishyaka Vendors",
+            "desc": "Store management for sellers – product upload, order tracking. (Under development)",
+            "tech": [
+                "BLoC",
+                "Firebase",
+                "SQLite",
+                "Clean Arch"
+            ],
+            "links": {}
+        },
+        {
+            "name": "Happy Shop",
+            "desc": "Shopping with maps, notifications, GetX, Stripe/PayPal.",
+            "tech": [
+                "GetX",
+                "Geolocator",
+                "Lottie",
+                "Payments"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/happyshop",
+                "youtube": "https://www.youtube.com/watch?v=RuvCCDwtgtQ"
+            }
+        },
+        {
+            "name": "Delivery",
+            "desc": "Live order tracking, polyline, GetX, Firebase notifications.",
+            "tech": [
+                "GetX",
+                "Maps",
+                "Polyline",
+                "Geolocator"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/delivery",
+                "youtube": "https://www.youtube.com/watch?v=tg2oO5aPWwI"
+            }
+        },
+        {
+            "name": "Foodease",
+            "desc": "Food delivery (WIP): BLoC, clean architecture, FCM, local notifs.",
+            "tech": [
+                "BLoC",
+                "Clean Arch",
+                "Dio",
+                "FCM"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/foodease"
+            }
+        },
+        {
+            "name": "Doctors",
+            "desc": "Telemedicine, WebRTC, BLoC, maps, localization.",
+            "tech": [
+                "BLoC",
+                "WebRTC",
+                "Firebase",
+                "Maps"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/doctor"
+            }
+        },
+        {
+            "name": "Shafi'i Poems",
+            "desc": "Religious poems, Provider, screen utils, native splash.",
+            "tech": [
+                "Provider",
+                "ScreenUtil",
+                "Assets"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/shafii",
+                "youtube": "https://www.youtube.com/watch?v=dQrDuOSBGrA"
+            }
+        },
+        {
+            "name": "Islamic Songs",
+            "desc": "Audio streaming, GetX, just_audio, Firebase Crashlytics.",
+            "tech": [
+                "GetX",
+                "Just Audio",
+                "StreamBuilder"
+            ],
+            "links": {
+                "youtube": "https://www.youtube.com/watch?v=rgzgK5Q07lY"
+            }
+        },
+        {
+            "name": "Portfolio App",
+            "desc": "Flutter portfolio with animations, GetX, Lottie, URL launcher.",
+            "tech": [
+                "GetX",
+                "Animate_do",
+                "Lottie"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/my_portfolio",
+                "site": "https://ahmed-eid-faried.github.io"
+            }
+        },
+        {
+            "name": "My Tasks",
+            "desc": "Task manager with Provider, calendar, animations.",
+            "tech": [
+                "Provider",
+                "Syncfusion",
+                "GetStorage"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/mytasks",
+                "youtube": "https://www.youtube.com/watch?v=qkkB0egPwqU"
+            }
+        },
+        {
+            "name": "Weather",
+            "desc": "Weather forecasts with GetX, geolocation, shared_prefs.",
+            "tech": [
+                "GetX",
+                "Geocoding",
+                "HTTP"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/weather",
+                "youtube": "https://www.youtube.com/watch?v=4jHMKkxFQw"
+            }
+        },
+        {
+            "name": "News App",
+            "desc": "News with GetX, webviews, Lottie, location services.",
+            "tech": [
+                "GetX",
+                "Webview",
+                "Lottie",
+                "Geolocator"
+            ],
+            "links": {
+                "github": "https://github.com/ahmed-eid-faried/news-app",
+                "youtube": "https://www.youtube.com/watch?v=Nj2HyHwXijg"
+            }
+        }
+    ],
+    "summaryText": "Experienced Flutter Developer skilled in Dart, OOP, and Solid Principles, proficient in problem-solving and data structures. Demonstrated expertise in Flutter, including animations, notifications, and deployment, coupled with strong proficiency in handling RESTful APIs, JSON, Postman, and Thunder Client, along with MySQL and PHP for API integration. Well-versed in state management techniques, including Getx, Provider, and Bloc pattern, with a solid grasp of design patterns, such as MVC, and a commitment to clean code and clean architecture. Proficient in Firebase services, debugging, various testing methodologies, Git, GitHub, UI/UX tools like Adobe XD and Figma, and adept in communication in English. Experienced in CI/CD, Agile development methodologies, and working with Jira for efficient project management.",
+    "contact": {
+        "name": "Ahmed Mady",
+        "email": "ahmed_mady22@icloud.com",
+        "phone": "+201555663045",
+        "github": "https://github.com/ahmed-eid-faried",
+        "portfolio": "https://ahmed-eid-faried.github.io",
+        "linkedin": "https://www.linkedin.com/in/ahmed-mady-a16715228/"
+    },
+    "hero": {
+        "name": "Ahmed Mady",
+        "job": "Flutter engineer",
+        "badge": "Flutter · Dart · clean architecture",
+        "snippetName": "FlutterExpert",
+        "snippetExperience": "3+ years · Bishyaka · freelance",
+        "objective": "Passionate Flutter developer with expertise in Dart and Flutter, dedicated to creating high-quality, user-centric mobile apps. Committed to delivering innovative solutions that enhance user experiences and drive business success.",
+        "education": {
+            "university": "Zagazig University",
+            "years": "2015–2019",
+            "degree": "B.Sc. Science, GPA 3.5 (Very Good with Honor)"
+        }
+    }
+}

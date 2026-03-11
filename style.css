@@ -206,6 +206,13 @@ body {
     margin-bottom: 12px;
 }
 
+.name-title .job-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
 .badge {
     display: inline-block;
     font-size: 1.2rem;
@@ -813,4 +820,23 @@ body {
     padding: 40px;
     border: 1px solid #d3e2f5;
     margin-top: 20px;
+}
+
+
+
+.core-skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.core-skill-pill {
+    background: white;
+    border: 1px solid #d7e2f0;
+    border-radius: 40px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1d3d62;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
