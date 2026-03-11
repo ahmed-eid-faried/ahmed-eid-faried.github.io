@@ -131,6 +131,7 @@ const lottiePaths = [
     'https://assets6.lottiefiles.com/packages/lf20_tfbztqlg.json',
     'https://assets1.lottiefiles.com/packages/lf20_ikxLpT.json'
 ];
+
 function loadLottie(containerId, index) {
     const el = document.getElementById(containerId);
     if (el && typeof lottie !== 'undefined') {
@@ -190,55 +191,57 @@ function initSmoothAnchor() {
     });
 }
 
-// ========== CONTACT FORM SUBMISSION (Client-side only) ==========
+// ========== CONTACT FORM SUBMISSION (Using Formspree) ==========
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
     if (!form) return;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const service = document.getElementById('service').value;
-        const details = document.getElementById('details').value;
-        const attachments = document.getElementById('attachments').files;
+        const formData = new FormData(form);
 
-        console.log('Form Submitted!', { name, service, details, attachments });
-
-        alert(
-            'Thank you for your message!\n\n'
-            + 'Please note: Sending emails directly from a website with attachments requires a backend server.\n'
-            + 'This form data has been logged to the console for demonstration purposes.\n\n'
-            + 'To enable full email functionality, a server-side script (e.g., Node.js, PHP, Python) would be needed to process the form and send the email with attachments.'
-        );
-
-        // Here you would typically send the data to a backend server
-        // Example (conceptual, requires backend):
-        /*
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('service', service);
-        formData.append('details', details);
-        for (let i = 0; i < attachments.length; i++) {
-            formData.append('attachments', attachments[i]);
-        }
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+        status.textContent = 'Processing your message...';
+        status.style.color = '#3b82f6';
 
         try {
-            const response = await fetch('/send-email', {
+            // Using Formspree - You can replace the email here if needed
+            // To use Formspree without a hash, you just send to this URL
+            // and you will receive a verification email to activate it.
+            const response = await fetch('https://formspree.io/f/ahmed_mady22@icloud.com', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
+
             if (response.ok) {
-                alert('Message sent successfully!');
+                status.textContent = '✅ Message sent successfully! I will get back to you soon.';
+                status.style.color = '#10b981';
                 form.reset();
             } else {
-                alert('Failed to send message. Please try again later.');
+                const data = await response.json();
+                if (data.errors) {
+                    status.textContent = '❌ Error: ' + data.errors.map(error => error.message).join(', ');
+                } else {
+                    status.textContent = '❌ Failed to send message. Please try again.';
+                }
+                status.style.color = '#ef4444';
             }
         } catch (error) {
-            console.error('Error sending message:', error);
-            alert('An error occurred. Please try again later.');
+            status.textContent = '❌ An error occurred. Please check your connection.';
+            status.style.color = '#ef4444';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Send Message';
         }
-        */
     });
 }
 
